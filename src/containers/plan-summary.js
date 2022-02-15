@@ -7,7 +7,7 @@ const PlanSummary = () => {
         <div className="border-solid border h-full p-5">
           <div >
             <h3 className="mb-5 text-3xl m-2">Plan Summary</h3>
-            <p class="text-sm text-gray-600 flex items-center m-2">
+            <p className="text-sm text-gray-600 flex items-center m-2">
               <svg className="w-8 mr-2" version="1.1" x="0px" y="0px" viewBox="0 0 24 24">
                 <path d="M22.1,6.2h-4.4V4.4c0-1.2-0.9-2.1-2.1-2.1H8.3c-1.2,0-2.1,0.9-2.1,2.1v1.8H1.8C0.8,6.2,0,7,0,8v11.9
                   c0,1,0.8,1.8,1.8,1.8h20.4c0.5,0,0.9-0.2,1.3-0.5c0.3-0.3,0.5-0.8,0.5-1.3V8C23.9,7,23.1,6.2,22.1,6.2z M8,4.4
