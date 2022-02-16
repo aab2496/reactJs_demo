@@ -1,6 +1,7 @@
 import { BiChevronRight } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 const PlanSummary = () => {
-
+    const navigate = useNavigate()
     return (
         <div className="block p-5">
       <div className="grid grid-cols-1 gap-1 md:grid-cols-2 ">
@@ -30,7 +31,10 @@ const PlanSummary = () => {
           </div>
           <div className="border-b border-grey pin-t mt-2 w-full my-2 mb-2" />
           <div className="flex justify-between text-xl text-sky-400">
-            <div className='flex justify-between align-bottom'><div>ID Cards</div> <BiChevronRight size={32} /></div>
+            <div className='flex justify-between align-bottom cursor-pointer' onClick={() => {navigate('/idcards')}}>
+                <div className='' >ID Cards</div> 
+                <BiChevronRight  size={32} />
+            </div>
             <div>Coverage Details</div>
           </div>
         </div>
