@@ -1,29 +1,26 @@
 import axios from 'axios';
+import store from '../store/store';
 
-export const getIdCard = () => {
-
-    axios
-      .get('https://api-deva.carefirst.com/v1/cf-idcards/members/idcards/ID_FRONT-171-917218512-230777001',
-       {
-        withCredentials: true,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ6V3ZuZzNIWTVnUlV5WkplMzhFMSIsImF1ZCI6InN5c3RlbSIsImp0byI6IlRGbGFQYUZkZWJ1YnVHQUFEWlVQeG95NWpTMnMiLCJwcm9maWxlVHlwZSI6InN5c3RlbSIsInByb2ZpbGVJZCI6Ii0xIiwiaXNzIjoiYXBpLWRldmEuY2FyZWZpcnN0LmNvbSIsImNmYXBpa2V5Ijoield2bmczSFk1Z1JVeVpKZTM4RTEiLCJleHAiOjE2NDUyMDU1MjUsImlhdCI6MTY0NTE5ODMyNSwianRpIjoiZDRhMmM4NDQtMmQ4NS00OTlhLTgyZjAtNzc5YjU1YmI0MDAwIn0.SHIksem5lWl1zNT7h2uP0OTyquewY7-0ure9VcXybXR-x3L73KYhC8omANuue0jGm4geGpS05frRu6q1aXVj3a_DPfFj82mU3G0HVyg1OHnCbJJ-owDcIuqrLEts1dA75jHf9o4Q_4bSvhyaPfVOjKQhRNsW8mqBDv41Itvq2sfxD5zuCsnFhgiKJ7BIQ2mcxPGHkJJS16qfHpKtxFT3iHUm4apbNDS_db4ZOOOrEChNKapFb_lemwQoBFGFo6zmxYk5dlGFUjGf3zv6E7y5AHucN7WBv7vKp1qbVXmYijNRkAY7Vgiwc4mlGbBn2plVgCwvxONwViLudQTcX3iFmw'
-          }
-       })
-
-    // axios({
-    //     method: 'get',
-    //     url: 'https://api-deva.carefirst.com/v1/cf-idcards/members/idcards/ID_FRONT-171-917218512-230777001',
-    //     headers: { 
-    //         'Access-Control-Allow-Origin': "*",
-    //         'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ6V3ZuZzNIWTVnUlV5WkplMzhFMSIsImF1ZCI6InN5c3RlbSIsImp0byI6IlRGbGFQYUZkZWJ1YnVHQUFEWlVQeG95NWpTMnMiLCJwcm9maWxlVHlwZSI6InN5c3RlbSIsInByb2ZpbGVJZCI6Ii0xIiwiaXNzIjoiYXBpLWRldmEuY2FyZWZpcnN0LmNvbSIsImNmYXBpa2V5Ijoield2bmczSFk1Z1JVeVpKZTM4RTEiLCJleHAiOjE2NDUyMDU1MjUsImlhdCI6MTY0NTE5ODMyNSwianRpIjoiZDRhMmM4NDQtMmQ4NS00OTlhLTgyZjAtNzc5YjU1YmI0MDAwIn0.SHIksem5lWl1zNT7h2uP0OTyquewY7-0ure9VcXybXR-x3L73KYhC8omANuue0jGm4geGpS05frRu6q1aXVj3a_DPfFj82mU3G0HVyg1OHnCbJJ-owDcIuqrLEts1dA75jHf9o4Q_4bSvhyaPfVOjKQhRNsW8mqBDv41Itvq2sfxD5zuCsnFhgiKJ7BIQ2mcxPGHkJJS16qfHpKtxFT3iHUm4apbNDS_db4ZOOOrEChNKapFb_lemwQoBFGFo6zmxYk5dlGFUjGf3zv6E7y5AHucN7WBv7vKp1qbVXmYijNRkAY7Vgiwc4mlGbBn2plVgCwvxONwViLudQTcX3iFmw'
-    //     }
-    //   })
+export const getIdCard = (isFront) => {
+    const side = isFront ? "FRONT" : "BACK"
+    store.loading.set(true)
+    axios.get(`https://api-sita.carefirst.com/v1/cf-idcards/members/idcards/ID_${side}-171-917218512-230777001`,
+        {
+            headers: {
+                'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJDNXk0Y3pvRFlYYVYza1ZaZUN0QiIsImF1ZCI6InN5c3RlbSIsImp0byI6IjZyamhzSEFBbFc3aWx3SmZJdE1xc2NUQ0NnNzQiLCJwcm9maWxlVHlwZSI6InN5c3RlbSIsInByb2ZpbGVJZCI6ImVjN2YwNDgzLWI2OTYtNGY2My05NmJhLTc4OTIzYTQ4NGQ1OSIsImlzcyI6ImFwaS1zaXRhLmNhcmVmaXJzdC5jb20iLCJjZmFwaWtleSI6IkM1eTRjem9EWVhhVjNrVlplQ3RCIiwiZXhwIjoxNjQ1NzQwNjIxLCJpYXQiOjE2NDU3MzM0MjEsImp0aSI6ImYyOTNhZmI4LWFkOGYtNDM3Zi05YWVjLWNjM2JlMDc2MjI5YiJ9.TIth8wM9o-SQvqqhGZswmwgB8xLUTYRa4arQvUlfayaw0ApARuSElIXnEba7XLHwJ-TIjaKYKs2pfA8pF8Y96pE1WzMx2PFd_UMm4UR25kT4_g29MVnBjx2A4Xzot7X49Hsu5sa4vwIizLTB8J0AILSTlWseZanAiwnAqhuClUppoBhqp4o2M8SWOcAkKm6TMyJat6iwrGOWr1gUZk61-TCZw7ix9ziYBMqLHxUk6ujPo4IEe-66s528y5DvMUhbKidH5Fs1ntgo-7me16FZ3KkiiMbZEhAkQz__RaTqQYn2Z5amoZxRBIYvn4G4FkHKBn_BD1xNBgpoZ3kosxcP4Q'
+            }
+        })
         .then(function (response) {
-            console.log(JSON.stringify(response.data));
+            if (isFront) {
+                store.frontId.merge({ 'someId': response.data.memberIdcard })
+                store.loading.set(false)
+            } else {
+                store.backId.merge({ 'someId': response.data.memberIdcard })
+                store.loading.set(false)
+            }
         })
         .catch(function (error) {
             console.log(error);
+            store.loading.set(false)
         });
 }

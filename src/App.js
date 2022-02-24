@@ -1,17 +1,21 @@
 import { useEffect } from "react";
-import PageHeader from "./components/page-header";
+import Card from "./components/card/card";
+import Layout from "./components/layout/layout";
+import Idcard from "./containers/idcard";
 import PlanSummary from "./containers/plan-summary";
-import { getIdCard } from "./services/restClient";
 
 const App = () => {
   useEffect(() => {
-    getIdCard()
-  })
+  }, [])
   return (
-    <div className="m-5">
-    <PageHeader/>
-      <PlanSummary/>
-    </div>
+    <Layout>
+      <Card>
+        <PlanSummary />
+      </Card>
+      <Card>
+        <Idcard/>
+      </Card>
+    </Layout>
   );
 }
 
