@@ -12,10 +12,10 @@ const Idcard = () => {
     useEffect(() => {
         getIdCard(true)
         getIdCard(false)
-        imageRef.current.addEventListener("animationend", imageRotation)
-        return () => {
-            imageRef.current.removeEventListener("animationend", imageRotation)
-        }
+        // imageRef.current.addEventListener("animationend", imageRotation)
+        // return () => {
+        //     imageRef.current.removeEventListener("animationend", imageRotation)
+        // }
     }, [])
 
     if (loading.get()) {
