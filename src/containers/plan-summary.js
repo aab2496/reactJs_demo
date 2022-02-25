@@ -22,9 +22,9 @@ const PlanSummary = () => {
           <div>Member ID</div>
           <div>Group#</div>
           <div>Effective Date</div>
-          <div>1234567</div>
-          <div>87654</div>
-          <div>Apr 1, 2021</div>
+          <div>FAM917218572</div>
+          <div>9904</div>
+          <div>Feb 1, 2021</div>
         </div>
       </div>
       <div className="border-b border-grey pin-t mt-2 w-full my-2 mb-2" />
