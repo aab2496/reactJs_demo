@@ -45,7 +45,7 @@ const Idcard = () => {
                     className="group bg-gray-100 flex justify-between px-4 py-3 items-center text-sky-400 transition ease duration-500 cursor-pointer pr-10 relative"
                 >
                     <div className="group-focus:text-sky-400 transition ease duration-500">
-                        IDCard - 1 (Click image to view other side)
+                        ID Card (Click image to view other side)
                     </div>
                     <div
                         className="h-8 w-8 border border-sky-400 rounded-full items-center inline-flex justify-center transform transition ease duration-500 group-focus:text-sky-400 group-focus:-rotate-180 absolute top-0 right-0 mb-auto ml-auto mt-2 mr-2"

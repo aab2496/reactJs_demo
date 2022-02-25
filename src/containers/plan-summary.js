@@ -18,13 +18,19 @@ const PlanSummary = () => {
         <div className="bg-sky-100 p-3 mb-6">
           Note: This Plan includes BlueVision.
         </div>
-        <div className="grid grid-cols-3">
-          <div>Member ID</div>
-          <div>Group#</div>
-          <div>Effective Date</div>
-          <div>1234567</div>
-          <div>87654</div>
-          <div>Apr 1, 2021</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          <div>
+            <div>Member ID</div>
+            <div>1234567</div>
+          </div>
+          <div>
+            <div>Group#</div>
+            <div>87654</div>
+          </div>
+          <div>
+            <div>Effective Date</div>
+            <div>Apr 1, 2021</div>
+          </div>
         </div>
       </div>
       <div className="border-b border-grey pin-t mt-2 w-full my-2 mb-2" />
