@@ -36,15 +36,15 @@ const get = async (url, query, headers) => {
     }
 }
 
-const post = async (url, body, headers) => {
-    try {
-        const response = await axios.post(url,
-            {
-                headers,
-                data: body
-            })
-        return response.data
-    } catch (error) {
-        console.log(error);
-    }
-}
+// const post = async (url, body, headers) => {
+//     try {
+//         const response = await axios.post(url,
+//             {
+//                 headers,
+//                 data: body
+//             })
+//         return response.data
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
