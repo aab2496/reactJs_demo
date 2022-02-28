@@ -21,15 +21,15 @@ const PlanSummary = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           <div>
             <div>Member ID</div>
-            <div>1234567</div>
+            <div>FAM917218512</div>
           </div>
           <div>
             <div>Group#</div>
-            <div>87654</div>
+            <div>9904</div>
           </div>
           <div>
             <div>Effective Date</div>
-            <div>Apr 1, 2021</div>
+            <div>Feb 1, 2021</div>
           </div>
         </div>
       </div>
